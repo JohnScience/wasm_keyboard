@@ -1,9 +1,35 @@
 [package]
 name = "wasm_keyboard"
 version = "0.1.0"
+authors = ["Dmitrii Demenev <demenev.dmitriy1@gmail.com>"]
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+rust-version = "1.56.1" # https://github.com/foresterre/cargo-msrv/issues/244
+description = "Handling key events in Rust using `web_sys`."
+documentation = "https://docs.rs/wasm_keyboard"
+readme = "README.md"
+repository = "https://github.com/JohnScience/wasm_keyboard"
+license = "MIT OR Apache-2.0"
+# license-file | not needed
+keywords = ["wasm", "frontend", "keyboard", "events"]
+categories = ["wasm", "web-programming"] # https://crates.io/category_slugs
+# workspace | not needed
+# build | not needed
+# links | not needed
+# exclude | not needed
+autobins = false
+# autoexamples = true
+autotests = false
+autobenches = false
 
 [dependencies]
 uievents-code = { version = "0.1.2", features = ["enum"] }
+wasm_keyboard_macros = "0.1.0"
+
+[dependencies.web-sys]
+version = "0.3.61"
+features = [
+    "KeyboardEvent",
+]
+
+[features]
+keypress = ["wasm_keyboard_macros/keypress"]
