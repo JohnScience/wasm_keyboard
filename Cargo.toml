@@ -23,7 +23,7 @@ autobenches = false
 
 [dependencies]
 uievents-code = { version = "0.1.2", features = ["enum"] }
-wasm_keyboard_macros = "0.1.0"
+wasm_keyboard_macros = "0.1"
 
 [dependencies.web-sys]
 version = "0.3.61"
